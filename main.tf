@@ -9,7 +9,7 @@ locals {
 resource "aws_api_gateway_rest_api" "this" {
   count = local.enabled ? 1 : 0
 
-  name = module.this.id
+  name = module.this.name
   body = jsonencode(var.openapi_config)
   tags = module.this.tags
 
